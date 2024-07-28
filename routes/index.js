@@ -8,6 +8,7 @@ module.exports = (app) => {
     }));
 
     app.post('/api/user/create', userController.create); // Corregido aquí
+    app.get('/api/user/login/:username/:password', userController.userLogin);
 
     app.post('/api/person/create', authMiddleware,personController.create);
     app.get('/api/person/list', authMiddleware, personController.getAll);
